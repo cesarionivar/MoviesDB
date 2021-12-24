@@ -12,7 +12,7 @@ export const Movies = () => {
   return (
     <section className='movies'>
       {movies.map((movie) => (
-        <MovieItem key={movie} />
+        <MovieItem key={movie.imdbID} {...movie} />
       ))}
     </section>
   );

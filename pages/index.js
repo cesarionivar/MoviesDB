@@ -31,8 +31,10 @@ export default function Home({ movies }) {
   );
 }
 
-export const getStaticProps = () => {
-  const movies = [1, 2, 3];
+export const getStaticProps = async () => {
+  const { Search: movies } = await fetch(
+    `https://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_MOVIE_APIKEY}&s=matrix`
+  ).then((res) => res.json());
 
   return {
     props: {

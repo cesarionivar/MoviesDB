@@ -1,17 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const MovieItem = () => {
+export const MovieItem = ({ Title, imdbID, Poster }) => {
   return (
     <div className='movie__card'>
-      <Link href='/movie/1'>
+      <Link href={`/movie/${imdbID}`}>
         <a>
-          <Image
-            src='https://images.pexels.com/photos/2859016/pexels-photo-2859016.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-            width={350}
-            height={400}
-          />
-          <p className='movie__description'>Spider man 2</p>
+          {Poster.includes('http') && (
+            <Image src={Poster} width={350} height={400} />
+          )}
+          <p className='movie__description'>{Title}</p>
         </a>
       </Link>
     </div>
