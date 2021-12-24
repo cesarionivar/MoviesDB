@@ -5,7 +5,7 @@ export const MovieItem = () => {
   return (
     <div className='movie__card'>
       <Link href='/movie/1'>
-        <a className='movie'>
+        <a>
           <Image
             src='https://images.pexels.com/photos/2859016/pexels-photo-2859016.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
             width={350}
