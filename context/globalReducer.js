@@ -14,6 +14,12 @@ export const moviesReducer = (state, action) => {
         loading: false,
       };
 
+    case types.setLoading:
+      return {
+        ...state,
+        loading: true,
+      };
+
     default:
       return state;
   }
